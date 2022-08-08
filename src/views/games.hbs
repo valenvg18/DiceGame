@@ -1,0 +1,57 @@
+<div class="row">
+  {{#each games}}
+
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">ID del juego:</h5>
+
+          <p class="card-text">{{_id}} </p>
+
+          <p class="card-text">
+            Jugadores:
+            {{#each gamers}}
+              <li>{{name}}</li>
+            {{/each}}
+          </p>
+          <p>Fecha de creacion:
+            <br />
+            {{formatTime "LLL" createdAt}}
+          </p>
+
+        </div>
+        <div class="card-footer">
+          <div class="btn-wrapper text-center d-flex justify-content-between">
+
+            {{#if winner.name}}
+              <h5 class="card-title"> {{winner.name}} Gano!</h5>
+
+            {{else}}
+              <a
+                class="btn btn-primary btn-sm"
+                href="/game/startGame/{{_id}}"
+                role="button"
+              >Iniciar</a>
+            {{/if}}
+            <form action="/game/delete/{{_id}}" method="POST">
+              <button
+                type="submit"
+                class="btn btn-danger btn-block btn-sm"
+              >Eliminar</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  {{else}}
+    <h1>no hay nada</h1>
+    {{!-- <div class="card mx-auto">
+    <div class="card-body">
+      <h1>Hello {{user.name}}</h1>
+      <p clsss="lead">There are not Notes yet.</p>
+      <a href="/notes/add" class="btn btn-success btn-block">Create One!</a>
+    </div>
+  </div> --}}
+  {{/each}}
+</div>

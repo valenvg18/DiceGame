@@ -16,4 +16,8 @@ indexCtrl.winnerGame = (req, res) => {
     res.render('winner');
 };
 
+// indexCtrl.renderGames = (req, res) => {
+//     res.render('games');
+// };
+
 module.exports = indexCtrl;

@@ -8,7 +8,11 @@ const {
     startGame , 
     renderEditGame, 
     updateGame, 
-    winnerGame 
+    winnerGame,
+    renderGames,
+    deleteGame,
+    renderDelete,
+    getGameById
 } = require('../controllers/game.controller');
 
 
@@ -18,8 +22,8 @@ router.post('/createGame', createGame);
 
 
 //Comenzar juego
-router.get('/game/startGame', renderStartGame);
-router.get('/game/startGame', startGame);
+router.get('/game/startGame/:id', renderStartGame);
+router.post('/game/startGame/:id', startGame);
 
 
 //Editar Juego, get solo muestra, post actualiza los datos
@@ -31,8 +35,17 @@ router.post('/game/edit/:id', updateGame);
 router.get('/game/:id/winner', winnerGame);
 
 
+router.get("/games", renderGames);
+
+
 
 //Query para consultar el juego y su estado (listado de jugadores y estados como tal del juego)
-router.get('/game/:id')
+router.get('/game/:id',getGameById)
+
+//query para eliminar juegos
+router.delete('/game/:id',deleteGame)
+router.post('/game/delete/:id',renderDelete)
+
+
 
 module.exports = router;

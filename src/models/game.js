@@ -1,11 +1,14 @@
 const { Schema, model } = require('mongoose');
-//const ObjectId = mongoose.Schema.Types.ObjectId;
+const mongoose = require('mongoose');
+
+const ObjectId = mongoose.Schema.Types.ObjectId;
+
 //const mongooseSoftDelete = require('mongoose-delete');
 
 const gameSchema = new Schema({
-    /* id: { 
+     id: { 
         type: ObjectId
-    }, */
+    }, 
     type: {
         type: String
     },

@@ -1,19 +1,31 @@
 body {
-    background: pink;
+  background: pink;
 }
 
 h1 {
+  color: black;
+}
+
+h2 {
+    color: white;
+}
+
+h3 {
     color: black;
 }
 
 p {
-    color: black;
+  color: black;
 }
 
 hr {
-    color:gray;
+  color: gray;
+}
+
+.startButton {
+  color: black;
 }
 
 .card {
-    background: white;
+  background: white;
 }

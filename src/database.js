@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 //const MONGODB_URI = process.env.MONGODB_URI;
 const { DICE_GAME_MONGODB_HOST, DICE_GAME_MONGODB_DATABASE } = process.env;
-const MONGODB_URI = `mongodb://${DICE_GAME_MONGODB_HOST}/${ DICE_GAME_MONGODB_DATABASE}`;
+const MONGODB_URI = 'mongodb://localhost/diceGame';
 
 mongoose.connect(MONGODB_URI, {
     useUnifiedTopology: true,
